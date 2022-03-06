@@ -1,0 +1,34 @@
+{
+  "name": "react-crop-center-image",
+  "version": "0.1.0",
+  "description": "Automatically crop the image to a specific range, scale to fit the main axis, and delete the secondary axis if overflow.",
+  "keywords": ["react", "image", "crop"],
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/laijunbin/react-crop-center-image.git"
+  },
+  "author": "Lai JunBin",
+  "license": "MIT",
+  "files": [
+    "dist"
+  ],
+  "main": "dist/index.js",
+  "private": false,
+  "scripts": {
+    "build": "babel src -d dist"
+  },
+  "dependencies": {
+    "react": "^17.0.2"
+  },
+  "devDependencies": {
+    "@babel/cli": "^7.16.0",
+    "@babel/preset-env": "^7.16.5",
+    "@babel/preset-react": "^7.16.5",
+    "eslint": "^7.32.0",
+    "eslint-config-standard": "^16.0.3",
+    "eslint-plugin-import": "^2.25.3",
+    "eslint-plugin-node": "^11.1.0",
+    "eslint-plugin-promise": "^5.2.0",
+    "eslint-plugin-react": "^7.28.0"
+  }
+}
