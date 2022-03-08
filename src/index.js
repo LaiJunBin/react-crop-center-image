@@ -1,7 +1,7 @@
 import React, { forwardRef, useEffect, useRef, useState } from 'react'
 
 function CropImage (props, ref) {
-  const { width, height, src, axis = 'x', autofill = true, ...rest } = props
+  const { width, height, src, axis = 'x', autofill = true, onDrawEnd = (ctx) => {}, ...rest } = props
   if (axis !== 'x' && axis !== 'y') {
     throw new Error("The axis must be 'x' or 'y'!")
   }
@@ -47,6 +47,7 @@ function CropImage (props, ref) {
       ]
     }
     ctx.drawImage(image, ...params)
+    onDrawEnd(ctx)
   }
 
   useEffect(() => {
