@@ -59,3 +59,8 @@ axis    | Set the main axis, the image will be scaled to fit the main axis. |
 ref     | Same as React ref, could get the canvas ref. |
 autofill    | When secondary axis has remaining space, whether fill white background. |
 {other}    | Other properties will automatically forward, such as className. |
+
+`CropImage` component available events:
+event           | description  |
+--------------|:-----:|
+onDrawEnd(ctx)    | callback after drawing the image |

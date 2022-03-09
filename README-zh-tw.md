@@ -59,3 +59,8 @@ axis    | 設定主要軸，圖片會等比例縮放至與主要軸貼齊 |
 ref     | 與 React ref 相同，可以取得 canvas ref |
 autofill    | 當次要軸有剩餘的空間是否自動填入白色 |
 {other}    | 其他參數會自動帶入props，例如 className |
+
+`CropImage` 組件可用的事件：
+事件           | 描述  |
+--------------|:-----:|
+onDrawEnd(ctx)    | 當 drawImage 後會呼叫的事件 |
