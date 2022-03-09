@@ -90,7 +90,7 @@ function CropImage(props, ref) {
   };
 
   (0, _react.useEffect)(function () {
-    if (ref.current) {
+    if (ref.current && image) {
       if (!src) {
         return;
       }

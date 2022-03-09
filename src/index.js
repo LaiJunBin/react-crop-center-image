@@ -51,7 +51,7 @@ function CropImage (props, ref) {
   }
 
   useEffect(() => {
-    if (ref.current) {
+    if (ref.current && image) {
       if (!src) {
         return
       }
