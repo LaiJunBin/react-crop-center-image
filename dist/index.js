@@ -9,7 +9,7 @@ exports["default"] = void 0;
 
 var _react = _interopRequireWildcard(require("react"));
 
-var _excluded = ["width", "height", "src", "axis", "autofill"];
+var _excluded = ["width", "height", "src", "axis", "autofill", "onDrawEnd"];
 
 function _getRequireWildcardCache(nodeInterop) { if (typeof WeakMap !== "function") return null; var cacheBabelInterop = new WeakMap(); var cacheNodeInterop = new WeakMap(); return (_getRequireWildcardCache = function _getRequireWildcardCache(nodeInterop) { return nodeInterop ? cacheNodeInterop : cacheBabelInterop; })(nodeInterop); }
 
@@ -49,6 +49,8 @@ function CropImage(props, ref) {
       axis = _props$axis === void 0 ? 'x' : _props$axis,
       _props$autofill = props.autofill,
       autofill = _props$autofill === void 0 ? true : _props$autofill,
+      _props$onDrawEnd = props.onDrawEnd,
+      onDrawEnd = _props$onDrawEnd === void 0 ? function (ctx) {} : _props$onDrawEnd,
       rest = _objectWithoutProperties(props, _excluded);
 
   if (axis !== 'x' && axis !== 'y') {
@@ -84,6 +86,7 @@ function CropImage(props, ref) {
     }
 
     ctx.drawImage.apply(ctx, [image].concat(_toConsumableArray(params)));
+    onDrawEnd(ctx);
   };
 
   (0, _react.useEffect)(function () {
