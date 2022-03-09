@@ -10,7 +10,7 @@ function CropImage (props, ref) {
     ref = useRef()
   }
 
-  const [image, setImage] = useState(new Image())
+  const [image, setImage] = useState(null)
 
   const render = () => {
     const ctx = ref.current.getContext('2d')
@@ -67,7 +67,9 @@ function CropImage (props, ref) {
   }, [ref, width, height, src, axis, autofill])
 
   useEffect(() => {
-    render()
+    if (image) {
+      render()
+    }
   }, [image])
 
   return <canvas ref={ref} width={width} height={height} {...rest}></canvas>

@@ -61,7 +61,7 @@ function CropImage(props, ref) {
     ref = (0, _react.useRef)();
   }
 
-  var _useState = (0, _react.useState)(new Image()),
+  var _useState = (0, _react.useState)(null),
       _useState2 = _slicedToArray(_useState, 2),
       image = _useState2[0],
       setImage = _useState2[1];
@@ -108,7 +108,9 @@ function CropImage(props, ref) {
     }
   }, [ref, width, height, src, axis, autofill]);
   (0, _react.useEffect)(function () {
-    render();
+    if (image) {
+      render();
+    }
   }, [image]);
   return /*#__PURE__*/_react["default"].createElement("canvas", _extends({
     ref: ref,
