@@ -25,7 +25,7 @@ function CropImage (props, ref) {
 
     if (autofill) {
       ctx.fillStyle = '#fff'
-      ctx.fillRect(0, 0, width, height)
+      ctx.fillRect(0, 0, image.width, image.height)
     }
 
     let params = []
