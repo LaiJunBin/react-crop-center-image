@@ -61,7 +61,7 @@ function CropImage(props, ref) {
     ref = (0, _react.useRef)();
   }
 
-  var _useState = (0, _react.useState)(null),
+  var _useState = (0, _react.useState)(new Image()),
       _useState2 = _slicedToArray(_useState, 2),
       image = _useState2[0],
       setImage = _useState2[1];
@@ -78,11 +78,11 @@ function CropImage(props, ref) {
 
     if (axis === 'x') {
       var scale = image.width / width;
-      params = [0, image.height / 2 - height * scale / 2, image.width, height * scale, 0, 0, width, height];
+      params = [0, image.height / 2 - height * scale / 2, image.width, height * scale, 0, 0, image.width, image.height];
     } else {
       var _scale = image.height / height;
 
-      params = [image.width / 2 - width * _scale / 2, 0, width * _scale, image.height, 0, 0, width, height];
+      params = [image.width / 2 - width * _scale / 2, 0, width * _scale, image.height, 0, 0, image.width, image.height];
     }
 
     ctx.drawImage.apply(ctx, [image].concat(_toConsumableArray(params)));
@@ -95,7 +95,7 @@ function CropImage(props, ref) {
         return;
       }
 
-      if ((image === null || image === void 0 ? void 0 : image.src) === src) {
+      if (image.src === src) {
         return render();
       }
 
@@ -108,14 +108,16 @@ function CropImage(props, ref) {
     }
   }, [ref, width, height, src, axis, autofill]);
   (0, _react.useEffect)(function () {
-    if (image) {
-      render();
-    }
+    render();
   }, [image]);
   return /*#__PURE__*/_react["default"].createElement("canvas", _extends({
     ref: ref,
-    width: width,
-    height: height
+    width: image.width,
+    height: image.height,
+    style: {
+      width: width,
+      height: height
+    }
   }, rest));
 }
 
