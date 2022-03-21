@@ -1,6 +1,6 @@
 {
   "name": "react-crop-center-image",
-  "version": "0.1.5",
+  "version": "0.1.6",
   "description": "Automatically crop the image to a specific range, scale to fit the main axis, and delete the secondary axis if overflow.",
   "keywords": [
     "react",
